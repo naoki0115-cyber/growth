@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+import sys
+
+def main():
+    # Check if input is provided through a pipe
+    if not sys.stdin.isatty():
+        input_str = sys.stdin.read().strip()
+    else:
+        # Input: Number of trials and priority for each outcome
+        input_str = input("Enter the input (e.g., 100,6,5,4,3,2,1): ")
+
+    # Parse input
+    try:
+        input_list = list(map(int, input_str.split(',')))
+        num_trials = input_list[0]
+        priorities = input_list[1:]
+
+        # Validate input
+        if len(priorities) != 6 or any(priority < 1 for priority in priorities):
+            raise ValueError("Invalid input format")
+    except ValueError as e:
+        print(f"Error: {e}")
+        return
+
+    # Simulate dice rolls and calculate counts for each outcome
+    outcome_counts = {6: 0, 5: 0, 4: 0, 3: 0, 2: 0, 1: 0}
+
+    for _ in range(num_trials):
+        roll1 = simulate_dice_roll()
+        roll2 = simulate_dice_roll()
+
+        selected_outcome = max(roll1, roll2, key=lambda x: priorities[x-1])
+        outcome_counts[selected_outcome] += 1
+
+    # Output: Display the counts for each outcome
+    for outcome, count in outcome_counts.items():
+        stat_name = get_stat_name(outcome)
+        print(f"{stat_name}: {count}")
+
+def simulate_dice_roll():
+    # Simulate a single dice roll (return a random number between 1 and 6)
+    import random
+    return random.randint(1, 6)
+
+def get_stat_name(outcome):
+    # Map outcomes to corresponding stat names
+    stat_names = ["Dexterity", "Agility", "Strength", "Vitality", "Intelligence", "Spirit"]
+    return stat_names[outcome - 1]
+
+if __name__ == "__main__":
+    main()
