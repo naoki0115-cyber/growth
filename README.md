@@ -9,14 +9,12 @@
 ```
 
 ## 使用方法・機能
-* このプログラムは仮想のキャラクターの能力値の成長を算出するものです。
-* 標準入力で成長回数と能力値の優先度を6~1を読み取り、各能力値の成長回数を出力します。
-* 能力値はDexterity(器用),Agility(敏捷),Strength(筋力),Vitality(生命力),Intelligence(知力),Spirit(精神)の6つです。
-* 成長は1回ごとに6面ダイスを2つ振り、優先度が高い方の出目を取得する、という処理を繰り返します。
+* このプログラムはTRPG『ソードワールド2.5』のキャラクターメイキング補助ツールです。
+* 
 
 * **入力例と実行結果**
 ```
-$ echo "100,6,5,4,3,2,1" | ./growth.py
+$ echo "100,6,5,4,3,2,1" | ./growth
 Spirit: 25
 Intelligence: 82
 Vitality: 119
@@ -25,7 +23,7 @@ Agility: 276
 Dexterity: 326
 ```
 ```
-$ ./growth.py
+$ ./growth
 1000,6,5,4,3,2,1 
 Spirit: 25
 Intelligence: 82
@@ -48,5 +46,6 @@ Dexterity: 326
 	* https://ryuichiueda.github.io/my_slides/robosys_2022/lesson4.html#/
 	* https://ryuichiueda.github.io/my_slides/robosys_2022/lesson5.html#/
 	* https://ryuichiueda.github.io/my_slides/robosys_2022/lesson6.html#/
-
+* 本ツールは、「グループＳＮＥ」及び「株式会社ＫＡＤＯＫＡＷＡ」が権利を有する『ソード・ワールド2.0／2.5』向け非公式ツールです。
+©GroupSNE ©KADOKAWA
 © 2024 Kaizawa Naoki

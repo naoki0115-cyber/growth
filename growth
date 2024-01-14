@@ -9,7 +9,7 @@ def main():
         input_str = sys.stdin.read().strip()
     else:
         # Input: Number of trials and priority for each outcome
-        input_str = input("")
+        input_str = input("Enter the input (e.g., 100,6,5,4,3,2,1): ")
 
     # Parse input
     try:
@@ -34,10 +34,10 @@ def main():
         selected_outcome = max(roll1, roll2, key=lambda x: priorities[x-1])
         outcome_counts[selected_outcome] += 1
 
-    # Output: Display the counts for each outcome
-    for outcome, count in outcome_counts.items():
+    # Output: Display the counts for each outcome in reverse order
+    for outcome in reversed(list(outcome_counts.keys())):
         stat_name = get_stat_name(outcome)
-        print(f"{stat_name}: {count}")
+        print(f"{stat_name}: {outcome_counts[outcome]}")
 
 def simulate_dice_roll():
     # Simulate a single dice roll (return a random number between 1 and 6)

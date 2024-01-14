@@ -9,7 +9,7 @@ ng () {
 
 res=0
 
-out=$( echo "100,6,5,4,3,2,1" | ./growth.py)
+out=$( echo "100,6,5,4,3,2,1" | ./growth)
 [ "${out}"="Dexterity: [0-9]{1,2}
 Agility: [0-9]{1,2}
 Strength: [0-9]{1,2}
