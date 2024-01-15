@@ -9,7 +9,7 @@ def main():
         input_str = sys.stdin.read().strip()
     else:
         # Input: Number of trials and priority for each outcome
-        input_str = input("Enter the input (e.g., 100,6,5,4,3,2,1): ")
+        input_str = input("")
 
     # Parse input
     try:

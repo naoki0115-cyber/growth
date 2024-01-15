@@ -20,22 +20,22 @@
 * **入力例と実行結果**
 ```
 $ echo "100,6,5,4,3,2,1" | ./growth
-Spirit: 25
-Intelligence: 82
-Vitality: 119
-Strength: 172
-Agility: 276
-Dexterity: 326
+Dexterity: 28
+Agility: 31
+Strength: 23
+Vitality: 10
+Intelligence: 6
+Spirit: 2
 ```
 ```
 $ ./growth
-1000,6,5,4,3,2,1 
-Spirit: 25
-Intelligence: 82
-Vitality: 119
-Strength: 172
-Agility: 276
-Dexterity: 326
+1000,1,2,3,4,5,6 
+Dexterity: 34
+Agility: 73
+Strength: 135
+Vitality: 189
+Intelligence: 271
+Spirit: 298
 ```
 
 ## 必要なソフトウェア
